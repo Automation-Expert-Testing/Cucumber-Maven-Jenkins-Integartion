@@ -1,0 +1,12 @@
+
+t	java:S115	"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ùÔÅüÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Œ¡´î
+o
+java:S3008"TRename this field "SearchBox" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Şİ•øÿÿÿÿ
+u
+java:S3008"ZRename this field "SearchBoxButton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úñè­ÿÿÿÿÿ
+J
+java:S1444"/Make this "public static SearchBox" field final(×Şİ•øÿÿÿÿ
+P
+java:S1444"5Make this "public static SearchBoxButton" field final(Úñè­ÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Œ‘ÈÖùÿÿÿÿ
