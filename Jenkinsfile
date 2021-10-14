@@ -92,12 +92,6 @@ agent any
                                                 if (UseCloudEnv.equals("True")){
                                                     return["Browserstack","Saucelab"]
                                                 }
-//                                                 else if(Os.equals("Windows")){
-//                                                     return["Windows 11", "Windows 10", "Windows 7","Windows 8","Windows XP","Windows Vista","Windows 2000","Windows ME","Windows 98"]
-//                                                 }
-//                                                 else if(Os.equals("Linux")){
-//                                                     return["Debian Linux", "Gentoo Linux", "Ubuntu Linux","Linux Mint Desktop","RHEL Linux Distribution","CentOS Linux Distribution","Fedora Linux Distribution","Kali Linux Distribution"]
-//                                                 }
                                                 '''
                                             ]
                                     ]
