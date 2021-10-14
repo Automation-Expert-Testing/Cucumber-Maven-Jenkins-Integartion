@@ -294,20 +294,20 @@ subject: "Status and reports of pipeline: ${currentBuild.fullDisplayName}",
            body:"""
            <p style="background-color:powderblue;">EXECUTED: Job <b> ${env.JOB_NAME}:${env.BUILD_NUMBER}
            </b></p>
-           <p style="color:DodgerBlue;">View console output at "<a href="${env.BUILD_URL}">
+           <p style="color:DodgerBlue;">View console output at :  "<a href="${env.BUILD_URL}">
            ${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"</p>
-           <p ><h3>The Testing Environment is     : </h3><h3 style="color:DodgerBlue;">${params.TestingEnvironment}</h3></p>
-           <p style="color:DodgerBlue;"><i>Use CloudEnvironment is        : ${params.UseCloudEnv}</i></p>
-           <p style="color:DodgerBlue;"><i>The Cloud Environemt Name is   : ${params.CloudEnvName}</i></p>
-           <p style="color:DodgerBlue;"><i>The Operating System is        : ${params.Os}</i></p>
-           <p style="color:DodgerBlue;"><i>The Operating System version is: ${params.Os_Version}</i></p>
-           <p style="color:DodgerBlue;"><i>The Browser Name is            : ${params.Browser_Name}</i></p>
-           <p style="color:DodgerBlue;"><i>The Browser Version is         : ${params.Browser_Version}</i></p>
-           <p style="color:DodgerBlue;"><i>The Implicitly Wait Time is    : ${params.ImplicitlyWaitTime}</i></p>
-           <p style="color:DodgerBlue;"><i>The Secret File Path is        : ${params.SecretFilePath}</i></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Testing Environment is     : ${params.TestingEnvironment}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">Use CloudEnvironment is        : ${params.UseCloudEnv}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Cloud Environemt Name is   : ${params.CloudEnvName}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Operating System is        : ${params.Os}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Operating System version is: ${params.Os_Version}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Browser Name is            : ${params.Browser_Name}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Browser Version is         : ${params.Browser_Version}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Implicitly Wait Time is    : ${params.ImplicitlyWaitTime}</h3></p>
+           <p ><h3 style="color:rgb(255, 99, 71);">The Secret File Path is        : ${params.SecretFilePath}</h3></p>
            <p style="border:2px solid DodgerBlue;"><i>(Cucumber reports are attached.)</i></p>
-           <p style="color:DodgerBlue;"><i>(Extent reports are attached.)</i></p>
-           <p style="color:rgb(255, 99, 71);"><i>(Build log is attached.)</i></p>"""
+           <p style="color:DodgerBlue;"><i>Note: The Extent reports are attached to the email.</i></p>
+           <p style="color:rgb(255, 99, 71);"><i>Note: The Build logs are attached to the email.</i></p>"""
 cucumber fileIncludePattern: 'target/reports/cucumber-reports/cucumber.json', sortingMethod: 'ALPHABETICAL'
 }
 }
