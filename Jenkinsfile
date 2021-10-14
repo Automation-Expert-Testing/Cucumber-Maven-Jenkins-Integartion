@@ -281,11 +281,6 @@ steps{
              }else
               {sh "mvn install -Dcucumber.filter.tags=${params.CucumberTag}"}
               
-//              def os = "${Os}"
-//              if(os=="Windows"){
-//              bat(/mvn install -Dcucumber.filter.tags=${CucumberTag}/)
-//              }else
-//               {sh "mvn install -Dcucumber.filter.tags=${CucumberTag}"}
               }
      }
    }
