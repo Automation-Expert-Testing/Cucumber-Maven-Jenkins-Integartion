@@ -52,6 +52,58 @@ agent any
                                 ],
                                 [$class: 'ChoiceParameter',
                                     choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the if Use Cloud Environment from the Dropdown List',
+                                    filterLength: 1,
+                                    filterable: false,
+                                    name: 'UseCloudEnv',
+                                    script: [
+                                        $class: 'GroovyScript',
+                                        fallbackScript: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['Could not get the use of Cloud Environment status']"
+                                        ],
+                                        script: [
+                                      
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['False','True']"
+                                        ]
+                                    ]
+                                ],
+                                [$class: 'CascadeChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the Cloud Environment Name from the Dropdown List',
+                                    name: 'CloudEnvName',
+                                    referencedParameters: 'UseCloudEnv',
+                                    script:
+                                        [$class: 'GroovyScript',
+                                        fallbackScript: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: "return['Could not get Cloud Environment Name']"
+                                                ],
+                                        script: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: '''
+                                                if (UseCloudEnv.equals("True")){
+                                                    return["Browserstack","Saucelab"]
+                                                }
+//                                                 else if(Os.equals("Windows")){
+//                                                     return["Windows 11", "Windows 10", "Windows 7","Windows 8","Windows XP","Windows Vista","Windows 2000","Windows ME","Windows 98"]
+//                                                 }
+//                                                 else if(Os.equals("Linux")){
+//                                                     return["Debian Linux", "Gentoo Linux", "Ubuntu Linux","Linux Mint Desktop","RHEL Linux Distribution","CentOS Linux Distribution","Fedora Linux Distribution","Kali Linux Distribution"]
+//                                                 }
+                                                '''
+                                            ]
+                                    ]
+                              ],
+                                [$class: 'ChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
                                     description: 'Select the Operating System from the Dropdown List',
                                     filterLength: 1,
                                     filterable: false,
