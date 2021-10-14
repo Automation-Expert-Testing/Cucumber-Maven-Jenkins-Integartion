@@ -301,8 +301,15 @@ subject: "Status and reports of pipeline: ${currentBuild.fullDisplayName}",
            </b></p>
            <p style="color:DodgerBlue;">View console output at "<a href="${env.BUILD_URL}">
            ${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"</p>
-           <p style="background-color:tomato;"><i>The Testing Environment is: ${params.TestingEnvironment}</i></p>
-           <p style="background-color:tomato;"><i>The Operating System is: ${params.Os}</i></p>
+           <p style="color:DodgerBlue;"><h1>The Testing Environment is     : ${params.TestingEnvironment}</h1></p>
+           <p style="color:DodgerBlue;"><i>Use CloudEnvironment is        : ${params.UseCloudEnv}</i></p>
+           <p style="color:DodgerBlue;"><i>The Cloud Environemt Name is   : ${params.CloudEnvName}</i></p>
+           <p style="color:DodgerBlue;"><i>The Operating System is        : ${params.Os}</i></p>
+           <p style="color:DodgerBlue;"><i>The Operating System version is: ${params.Os_Version}</i></p>
+           <p style="color:DodgerBlue;"><i>The Browser Name is            : ${params.Browser_Name}</i></p>
+           <p style="color:DodgerBlue;"><i>The Browser Version is         : ${params.Browser_Version}</i></p>
+           <p style="color:DodgerBlue;"><i>The Implicitly Wait Time is    : ${params.ImplicitlyWaitTime}</i></p>
+           <p style="color:DodgerBlue;"><i>The Secret File Path is        : ${params.SecretFilePath}</i></p>
            <p style="border:2px solid DodgerBlue;"><i>(Cucumber reports are attached.)</i></p>
            <p style="color:DodgerBlue;"><i>(Extent reports are attached.)</i></p>
            <p style="color:rgb(255, 99, 71);"><i>(Build log is attached.)</i></p>"""
