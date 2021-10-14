@@ -296,7 +296,7 @@ subject: "Status and reports of pipeline: ${currentBuild.fullDisplayName}",
            </b></p>
            <p style="color:DodgerBlue;">View console output at "<a href="${env.BUILD_URL}">
            ${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"</p>
-           <p style="color:DodgerBlue;"><h1>The Testing Environment is     : ${params.TestingEnvironment}</h1></p>
+           <p ><h3 style="color:DodgerBlue;">The Testing Environment is     : ${params.TestingEnvironment}</h3></p>
            <p style="color:DodgerBlue;"><i>Use CloudEnvironment is        : ${params.UseCloudEnv}</i></p>
            <p style="color:DodgerBlue;"><i>The Cloud Environemt Name is   : ${params.CloudEnvName}</i></p>
            <p style="color:DodgerBlue;"><i>The Operating System is        : ${params.Os}</i></p>
