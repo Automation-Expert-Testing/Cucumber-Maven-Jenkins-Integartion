@@ -208,15 +208,15 @@ agent any
             script {
                 def props = """
 
-TestingEnvironment =${TestingEnvironment}
-UseCloudEnv =${UseCloudEnv}
-CloudEnvName =${CloudEnvName}
+TestingEnvironment =${params.TestingEnvironment}
+UseCloudEnv =${params.UseCloudEnv}
+CloudEnvName =${params.CloudEnvName}
 Os =${Os}
-Os_version =${Os_Version}
-BrowserName =${Browser_Name}
-BrowserVersion =${Browser_Version}
-ImplicitlyWaitTime =${ImplicitlyWaitTime}
-SecretFilePath =${SecretFilePath}
+Os_version =${params.Os_Version}
+BrowserName =${params.Browser_Name}
+BrowserVersion =${params.Browser_Version}
+ImplicitlyWaitTime =${params.ImplicitlyWaitTime}
+SecretFilePath =${params.SecretFilePath}
 
                 """
                 writeFile file: "config.properties", text: props
@@ -229,11 +229,17 @@ stage('Running the test suit'){
 
 steps{
             script {
-             def os = "${Os}"
+             def os = params.Os
              if(os=="Windows"){
-             bat(/mvn install -Dcucumber.filter.tags=${CucumberTag}/)
+             bat(/mvn install -Dcucumber.filter.tags=${params.CucumberTag}/)
              }else
-              {sh "mvn install -Dcucumber.filter.tags=${CucumberTag}"}
+              {sh "mvn install -Dcucumber.filter.tags=${params.CucumberTag}"}
+              
+//              def os = "${Os}"
+//              if(os=="Windows"){
+//              bat(/mvn install -Dcucumber.filter.tags=${CucumberTag}/)
+//              }else
+//               {sh "mvn install -Dcucumber.filter.tags=${CucumberTag}"}
               }
      }
    }
@@ -242,15 +248,15 @@ post {
 always {
 echo "Test succeeded"
 emailext attachmentsPattern: '**/*.html, **/*.pdf',
-to: "${notification_email}",
+to: "${params.notification_email}",
 subject: "Status and reports of pipeline: ${currentBuild.fullDisplayName}",
            body:"""
            <p style="background-color:powderblue;">EXECUTED: Job <b> ${env.JOB_NAME}:${env.BUILD_NUMBER}
            </b></p>
            <p style="color:DodgerBlue;">View console output at "<a href="${env.BUILD_URL}">
            ${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"</p>
-           <p style="background-color:tomato;"><i>The Testing Environment is: ${TestingEnvironment}</i></p>
-           <p style="background-color:tomato;"><i>The Operating System is: ${Os}</i></p>
+           <p style="background-color:tomato;"><i>The Testing Environment is: ${params.TestingEnvironment}</i></p>
+           <p style="background-color:tomato;"><i>The Operating System is: ${params.Os}</i></p>
            <p style="border:2px solid DodgerBlue;"><i>(Cucumber reports are attached.)</i></p>
            <p style="color:DodgerBlue;"><i>(Extent reports are attached.)</i></p>
            <p style="color:rgb(255, 99, 71);"><i>(Build log is attached.)</i></p>"""
